@@ -1,7 +1,7 @@
 # mouseCMS
 CMS classifier for mouse models. 
 
-An example data set is provided to explain how to work with mouseCMS R package and mouseCMSclassifier function. 
+An example data set is provided to explain how to work with ```mouseCMS``` R package and ```mouseCMSclassifier``` function. 
 
 To install the mouseCMS package use the following code:
 ```
