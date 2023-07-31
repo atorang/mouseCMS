@@ -1,0 +1,40 @@
+---
+title: "mouseCMS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mouseCMS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = FALSE,
+  comment = "#>"
+)
+```
+```{r setup}
+library(mouseCMS)
+```
+An R package for subtyping mouse models into CMSs and an example dataset provided to run the `mouseCMSclassifier`.
+
+To install the `mouseCMS`, use `devtools`:
+
+```{r eval=FALSE}
+    library(devtools)
+    install_github("atorang/mouseCMS")
+```
+
+To run the demo below, you need to first load package and a dataset:
+
+```{r eval=FALSE}
+    library(mouseCMS)
+    load("exprs.test")
+```
+
+Now you can classify the data using an elastic-net model: The function has only two arguments, `data` which is a numeric matrix or data.frame with expression levels. Rows are genes and columns are samples. Ensemble Ids are used. And `log2Transformation` which is a logical determining if data needs log2-transformation or if the data is already log2-transformed. Default is `log2Transformation = FALSE`.
+
+```{r eval=FALSE}
+    res <- mouseCMSclassifier(data=exprs.test, log2Transformation=FALSE)
+```
